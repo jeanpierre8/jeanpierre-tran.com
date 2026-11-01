@@ -1,0 +1,13 @@
+.mobile-menu-toggle,.nav .mobile-site-menu{display:none}.nav .mobile-site-menu[hidden]{display:none!important}
+@media(max-width:800px){
+ .nav{position:fixed;background:#080f19e8;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);z-index:25}
+ .nav-end{gap:11px}.nav-end .mobile-menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 10px;border:1px solid #a9cbd066;color:#e3f0ef;font:700 10px 'Space Mono',monospace;letter-spacing:.04em;cursor:pointer}
+ .nav-end .mobile-menu-word{opacity:1}.mobile-menu-icon{display:flex;flex-direction:column;gap:4px;width:14px;opacity:1!important}.mobile-menu-icon i{display:block;background:#bce7e3;width:14px;height:1px;transition:transform .2s}
+ .mobile-menu-open .mobile-menu-icon i:first-child{transform:translateY(2.5px) rotate(45deg)}.mobile-menu-open .mobile-menu-icon i:last-child{transform:translateY(-2.5px) rotate(-45deg)}
+ .nav .mobile-site-menu:not([hidden]){position:absolute;display:flex;flex-direction:column;align-items:stretch;gap:0;top:calc(100% + 8px);right:6%;width:min(300px,88vw);padding:8px 18px;background:#0a1825f5;border:1px solid #99c9d055;box-shadow:0 18px 48px #0009;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+ .nav .mobile-site-menu a{font:600 14px 'DM Sans',sans-serif;color:#e4efef;padding:14px 2px;border-bottom:1px solid #a5c4cf28}
+ .nav .mobile-site-menu a:last-child{border:0}.nav .mobile-site-menu a:focus-visible,.mobile-menu-toggle:focus-visible{outline:3px solid #a0d8dc;outline-offset:3px}
+}
+@media(max-width:390px){.nav-end .nav-contact{display:none}}
+@media(prefers-reduced-motion:reduce){.mobile-menu-icon i{transition:none}}
+@media(max-width:800px){#expertise,#experience,#projet,#parcours,#contact{scroll-margin-top:76px}}

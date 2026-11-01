@@ -1,0 +1,12 @@
+/* One uninterrupted backdrop extends beneath the whole journey. */
+body{isolation:isolate;background:#080e1a}
+.cosmic-continuity{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:#080e1a;contain:strict}
+.cosmic-continuity::before{content:"";position:absolute;inset:-20%;background:radial-gradient(ellipse 45% 50% at var(--cosmos-x,75%) var(--cosmos-y,38%),rgba(42,93,114,.23),transparent 72%),radial-gradient(ellipse 40% 42% at var(--cosmos-x2,15%) var(--cosmos-y2,75%),rgba(51,81,111,.12),transparent 72%);will-change:background}
+.cosmic-continuity canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.72}
+/* The sections are windows into the same space, not separate backgrounds. */
+.hero,.expertise,.experience,.project,.journey-section,.closing{background:transparent}
+.hero-picture,.hero-shade{-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 48%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0%,#000 48%,transparent 100%)}
+@media(prefers-reduced-motion:reduce){.cosmic-continuity::before{will-change:auto}.cosmic-continuity canvas{opacity:.45}}
+
+/* Fade the enlarged artwork before the sticky frame ends, avoiding a hard edge. */
+.hero-picture{-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 34%,transparent 78%);mask-image:linear-gradient(to bottom,#000 0%,#000 34%,transparent 78%)}

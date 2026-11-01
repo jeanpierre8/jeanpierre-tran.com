@@ -1,0 +1,4 @@
+/* Les lignes du parcours sont informatives : aucun symbole de lien trompeur. */
+.timeline article > b{display:none}
+.timeline article{grid-template-columns:25% 1fr}
+@media(max-width:800px){.timeline article{grid-template-columns:30% 1fr}}

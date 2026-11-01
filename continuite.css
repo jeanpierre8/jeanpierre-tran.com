@@ -1,0 +1,10 @@
+/* A single continuous space field underneath every section. */
+body{background-color:#080e1a;background-image:radial-gradient(circle,#9bc6d94a .8px,transparent 1.4px),radial-gradient(circle,#c8eff62e .65px,transparent 1.2px),radial-gradient(ellipse at 75% 28%,#152c3d 0%,#080e1a 68%);background-size:193px 223px,311px 269px,100% 100%;background-position:24px 15px,78px 87px,center;background-attachment:fixed}
+.hero,.expertise,.experience,.project,.journey-section,.closing{background:transparent}
+.hero-picture,.hero-shade,.hero-stars{-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 53%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0%,#000 53%,transparent 100%)}
+.hero-stars{-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 40%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0%,#000 40%,transparent 100%)}
+.expertise:before,.journey-section:before{-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 28%,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 28%,#000 70%,transparent 100%)}
+.project:before{-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 70%,transparent 100%)}
+.closing-glow{-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 40%);mask-image:linear-gradient(to bottom,transparent 0%,#000 40%)}
+/* The project halo was clipped by its section boundary; the shared field supplies the glow instead. */
+.project:before{display:none}

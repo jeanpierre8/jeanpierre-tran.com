@@ -1,0 +1,8 @@
+/* Crossfade and lift each real section; no intermediary screens. */
+.expertise{background:linear-gradient(180deg,#080e1a 0%,#0b1320 18%)}
+.experience{background:linear-gradient(180deg,#0b1320 0%,#0b1421 20%)}
+.project{background:linear-gradient(180deg,#0b1421 0%,#101e2c 24%)}
+.journey-section{background:linear-gradient(180deg,#101e2c 0%,#0b1320 22%)}
+.closing{background:linear-gradient(180deg,#0b1320 0%,#091522 24%)}
+.section > .section-inner,.closing > .closing-copy{transform:translate3d(0,var(--section-enter-y,0px),0) scale(var(--section-enter-scale,1));opacity:calc(var(--section-enter-opacity,1) * var(--section-exit-opacity,1));transform-origin:center top;will-change:transform,opacity}
+@media(prefers-reduced-motion:reduce){.section > .section-inner,.closing > .closing-copy{transform:none!important;opacity:1!important}}

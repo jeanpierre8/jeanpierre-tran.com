@@ -1,0 +1,15 @@
+/* Scroll-led accents on actual content. Values default to the fully revealed state. */
+.data-art i{transform:scaleY(var(--sm-bar,1))!important;transform-origin:bottom;will-change:transform}
+.orbit-art b{box-shadow:0 0 calc(12px + var(--sm-ai,1)*25px) #a5dfe0;scale:calc(.75 + var(--sm-ai,1)*.25)}
+.wave-art path,.signal-screen path{stroke-dasharray:700;stroke-dashoffset:calc((1 - var(--sm-signal,1))*700)!important}
+.signal-screen{position:relative;overflow:hidden}
+.sm-signal-scan{position:absolute;top:13%;bottom:13%;width:1px;left:calc(var(--sm-signal,1)*100%);background:linear-gradient(transparent,#b6eeec,transparent);box-shadow:0 0 12px #b6eeec;opacity:calc(4*var(--sm-signal,1)*(1 - var(--sm-signal,1)));pointer-events:none}
+.project-card-body p{clip-path:inset(0 0 calc((1 - var(--sm-project,1))*100%) 0)}
+.sm-project-glow{position:absolute;pointer-events:none;left:8%;right:8%;bottom:0;height:1px;background:linear-gradient(90deg,transparent,#b9eeea,transparent);opacity:calc(4*var(--sm-project,1)*(1 - var(--sm-project,1)));transform:translateY(calc((1 - var(--sm-project,1))*-145px));box-shadow:0 0 15px #80dce0}
+.timeline{position:relative}
+.sm-timeline-track{position:absolute;left:27%;top:0;bottom:0;width:1px;background:#96d3d126;pointer-events:none}
+.sm-timeline-track::before{content:'';position:absolute;inset:0;background:linear-gradient(#b5e6e1,#719fac);transform-origin:top;transform:scaleY(var(--sm-track,1));box-shadow:0 0 10px #80cbc47a}
+.timeline article{position:relative}
+.timeline article::before{content:'';position:absolute;left:27%;top:36px;width:7px;height:7px;border-radius:50%;background:#b7e2df;box-shadow:0 0 10px #99dfdb;transform:translateX(-3px) scale(var(--sm-node,1));opacity:var(--sm-node,1);pointer-events:none}
+@media(max-width:800px){.sm-timeline-track,.timeline article::before{left:32.5%}}
+@media(prefers-reduced-motion:reduce){.data-art i{transform:none!important}.orbit-art b{scale:1!important}.wave-art path,.signal-screen path{stroke-dashoffset:0!important}.project-card-body p{clip-path:none!important}.sm-signal-scan,.sm-project-glow{display:none}.sm-timeline-track::before{transform:none!important}.timeline article::before{transform:translateX(-3px)!important;opacity:1!important}}
