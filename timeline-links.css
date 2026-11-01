@@ -1,0 +1,33 @@
+/* Les expériences ouvrables restent lisibles dans la chronologie. */
+.timeline-detail-link {
+  display: block;
+  position: relative;
+  padding: 15px 18px;
+  margin: -15px -18px;
+  border: 1px solid transparent;
+  background: rgba(127, 193, 205, .035);
+  transition: background-color .2s ease, border-color .2s ease;
+}
+.timeline-detail-link .timeline-link-label {
+  display: inline-block;
+  margin-top: 14px;
+  color: #b5e2e1;
+  font: 700 10px/1.5 'Space Mono', monospace;
+  letter-spacing: .03em;
+}
+.timeline-detail-link:hover,
+.timeline-detail-link:focus-visible {
+  border-color: rgba(165, 221, 224, .55);
+  background: rgba(111, 190, 203, .10);
+}
+.timeline-detail-link:focus-visible {
+  outline: 3px solid #e6c4a8;
+  outline-offset: 3px;
+}
+@media (max-width: 800px) {
+  .timeline-detail-link { padding: 12px; margin: -12px; }
+  .timeline-detail-link .timeline-link-label { margin-top: 12px; font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .timeline-detail-link { transition: none; }
+}

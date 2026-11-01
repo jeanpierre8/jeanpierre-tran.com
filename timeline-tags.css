@@ -1,0 +1,29 @@
+/* Des repères lisibles pour identifier rapidement chaque étape du parcours. */
+.timeline-entry-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 14px;
+}
+.timeline-entry-heading h3 {
+  min-width: 0;
+  margin-bottom: 8px;
+}
+.timeline-tag {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border: 1px solid rgba(156, 213, 220, .48);
+  color: #c8e7e8;
+  background: rgba(68, 127, 142, .13);
+  font: 700 9px/1.2 'Space Mono', monospace;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+@media (max-width: 800px) {
+  .timeline-entry-heading { gap: 5px 8px; }
+  .timeline-tag { font-size: 9px; padding: 4px 7px; }
+}
