@@ -8,3 +8,9 @@
 .xp-closing-stars{position:absolute;inset:0;overflow:hidden;pointer-events:none}.xp-closing-stars i{position:absolute;left:var(--x);top:var(--y);width:3px;height:3px;border-radius:50%;background:#d2ffff;box-shadow:0 0 8px 2px #90dce2;animation:xp-twinkle 3s ease-in-out infinite alternate}.xp-closing-stars i:nth-child(1){--x:12%;--y:25%}.xp-closing-stars i:nth-child(2){--x:27%;--y:16%;animation-delay:-1s}.xp-closing-stars i:nth-child(3){--x:72%;--y:22%;animation-delay:-2s}.xp-closing-stars i:nth-child(4){--x:87%;--y:43%;animation-delay:-.6s}.xp-closing-stars i:nth-child(5){--x:16%;--y:66%;animation-delay:-1.7s}.xp-closing-stars i:nth-child(6){--x:81%;--y:75%;animation-delay:-2.4s}.xp-closing-stars span{position:absolute;top:12%;left:18%;width:130px;height:1px;rotate:-18deg;background:linear-gradient(90deg,transparent,#d5ffff);opacity:0;animation:xp-meteor 9s ease-in infinite}.closing:not(.xp-active) .xp-closing-stars *{animation-play-state:paused}@keyframes xp-meteor{0%,70%,100%{opacity:0;transform:translate(-100px,-50px)}75%{opacity:.8}86%{opacity:0;transform:translate(260px,90px)}}
 @media(max-width:800px){.xp-route{left:32.5%}.xp-comet:before{width:35px}.xp-card-light{display:none}.xp-radar-sweep{width:36%}}
 @media(prefers-reduced-motion:reduce){.xp-card-light,.xp-satellites,.xp-radar,.xp-project-orbit,.xp-route,.xp-closing-stars{display:none!important}}
+
+/* Keep the experience radar legible while preserving its orbital sweep. */
+.detail-page #experience .xp-radar-ring.a{animation-duration:8s}
+.detail-page #experience .xp-radar-ring.b{animation:none;scale:.85;opacity:.25}
+.detail-page #experience .xp-radar-point.p1{animation-duration:3.5s}
+.detail-page #experience .xp-radar-point.p2,.detail-page #experience .xp-radar-point.p3{animation:none;opacity:.45}

@@ -1,0 +1,13 @@
+/* Touch feedback is separate from the fine-pointer hover layers. */
+@media (any-pointer:coarse){
+ .expertise-item.touch-active{background-color:#173849;box-shadow:inset 0 0 0 1px #aee7e7b3}
+ .expertise-item::before,.expertise-item::after{content:'';position:absolute;z-index:-1;pointer-events:none;opacity:0;transition:opacity .16s ease-out}
+ .expertise-item::before{inset:0;background:radial-gradient(circle 190px at var(--touch-x,50%) var(--touch-y,50%),#99eff048,transparent 76%)}
+ .expertise-item::after{left:var(--touch-x,50%);top:var(--touch-y,50%);width:180px;height:76px;border:1px solid #b6f1ed8c;border-radius:50%;transform:translate(-50%,-50%) rotate(-18deg);box-shadow:0 0 18px #8ae1e12b}
+ .expertise-item.touch-active::before{opacity:1}
+ .expertise-item.touch-active::after{opacity:.85}
+}
+@media (any-pointer:coarse) and (prefers-reduced-motion:reduce){
+ .expertise-item.touch-active{transition:none;background-color:#1b3c4b}
+ .expertise-item::before,.expertise-item::after{display:none}
+}

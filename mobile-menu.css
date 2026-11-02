@@ -1,7 +1,7 @@
 .mobile-menu-toggle,.nav .mobile-site-menu{display:none}.nav .mobile-site-menu[hidden]{display:none!important}
 @media(max-width:800px){
  .nav{position:fixed;background:#080f19e8;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);z-index:25}
- .nav-end{gap:11px}.nav-end .mobile-menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 10px;border:1px solid #a9cbd066;color:#e3f0ef;font:700 10px 'Space Mono',monospace;letter-spacing:.04em;cursor:pointer}
+ .nav-end{gap:11px}.nav-end .mobile-menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;min-width:44px;padding:8px 10px;border:1px solid #a9cbd066;color:#e3f0ef;font:700 10px 'Space Mono',monospace;letter-spacing:.04em;cursor:pointer}
  .nav-end .mobile-menu-word{opacity:1}.mobile-menu-icon{display:flex;flex-direction:column;gap:4px;width:14px;opacity:1!important}.mobile-menu-icon i{display:block;background:#bce7e3;width:14px;height:1px;transition:transform .2s}
  .mobile-menu-open .mobile-menu-icon i:first-child{transform:translateY(2.5px) rotate(45deg)}.mobile-menu-open .mobile-menu-icon i:last-child{transform:translateY(-2.5px) rotate(-45deg)}
  .nav .mobile-site-menu:not([hidden]){position:absolute;display:flex;flex-direction:column;align-items:stretch;gap:0;top:calc(100% + 8px);right:6%;width:min(300px,88vw);padding:8px 18px;background:#0a1825f5;border:1px solid #99c9d055;box-shadow:0 18px 48px #0009;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
@@ -11,3 +11,16 @@
 @media(max-width:390px){.nav-end .nav-contact{display:none}}
 @media(prefers-reduced-motion:reduce){.mobile-menu-icon i{transition:none}}
 @media(max-width:800px){#expertise,#experience,#projet,#parcours,#contact{scroll-margin-top:76px}}
+
+/* Touch targets and immediate feedback on the home navigation and calls to action. */
+@media(max-width:800px){
+ body:not(.detail-page) .nav-end #language{min-width:44px;min-height:44px;cursor:pointer}
+ body:not(.detail-page) .nav-end .nav-contact{display:inline-flex;align-items:center;min-height:44px}
+ body:not(.detail-page) .nav .mobile-site-menu a{display:flex;align-items:center;min-height:44px}
+ body:not(.detail-page) .button{min-height:44px}
+ body:not(.detail-page) .mobile-menu-toggle:active,body:not(.detail-page) .nav-end #language:active,body:not(.detail-page) .nav-contact:active{background:#37616a;border-color:#c1e9e5;transition:none}
+ body:not(.detail-page) .button.primary:active{background:#92c8c6;transition:none}
+ body:not(.detail-page) .button.subtle:active{color:#fff;transition:none}
+ body:not(.detail-page) .button.cv-download:active{background:#37616a;border-color:#c1e9e5;transition:none}
+}
+@media(max-width:390px){body:not(.detail-page) .nav-end .nav-contact{display:none}}

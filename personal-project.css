@@ -1,0 +1,39 @@
+/* Personal project introduction, in the portfolio's existing night-sky palette. */
+.personal-project{isolation:isolate;background:linear-gradient(180deg,#0b1320,#0b1928 55%,#091522)}
+.personal-project:before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 80% 32%,#366c7b35,transparent 48%)}
+.personal-project-heading h2{max-width:850px}
+.personal-project-card{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;margin-top:70px;border:1px solid #a8d9dc4a;background:#102131b8;overflow:hidden}
+.personal-project-copy{padding:clamp(28px,4vw,58px);display:flex;flex-direction:column;align-items:flex-start;position:relative;z-index:1}
+.personal-project-meta,.personal-project-visual-top,.personal-project-visual-bottom{display:flex;align-items:center;justify-content:space-between;width:100%;gap:20px;color:#a7c8ce;font:700 10px/1.5 'Space Mono',monospace;letter-spacing:.08em}
+.personal-project-meta span:last-child{color:#b9e6e2;font-size:20px}
+.personal-project-copy h3{font-size:clamp(42px,4.5vw,66px);line-height:1.06;margin:44px 0 21px}
+.personal-project-copy p{max-width:470px;color:#bdcdd1;font-size:16px;line-height:1.8;margin:0}
+.personal-project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.personal-project-tags span{border:1px solid #9ec4ca55;padding:8px 10px;font:9px 'Space Mono',monospace;letter-spacing:.05em;color:#c0d5d6}
+.personal-project-copy .personal-project-link{display:inline-flex;align-items:center;justify-content:space-between;gap:32px;margin:34px 0 0;padding:15px 18px;min-height:48px;background:#c2e7e5;color:#0a1b22;border:1px solid #c2e7e5;font:700 12px/1.4 'DM Sans',sans-serif;letter-spacing:0;transition:background-color .2s,transform .2s,border-color .2s}
+.personal-project-copy .personal-project-link:hover,.personal-project-copy .personal-project-link:focus-visible{background:#e2faf5;border-color:#e2faf5;transform:translateY(-3px)}
+.personal-project-copy .personal-project-link:focus-visible{outline:3px solid #f3d0a8;outline-offset:4px}
+.personal-project-copy .personal-project-link:active{background:#9ed4cf;transform:translateY(0)}
+.personal-project-art{min-height:470px;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 55% 45%,#32667875,#11263877 58%,#0c1c2b);border-left:1px solid #a8d9dc30}
+.personal-project-art:before{content:'';position:absolute;inset:0;background-image:radial-gradient(#d4f7ff9c .8px,transparent 1.5px),radial-gradient(#a7dfe860 .7px,transparent 1.3px);background-size:89px 103px,137px 127px;background-position:14px 20px,39px 12px;opacity:.6}
+.personal-project-orbit{position:absolute;left:50%;top:50%;width:86%;aspect-ratio:1;border:1px solid #a9e6e94a;border-radius:50%;transform:translate(-50%,-50%)}
+.personal-project-orbit-a{box-shadow:0 0 0 30px #a9e6e908,0 0 0 60px #a9e6e906}
+.personal-project-orbit-b{width:65%;border-style:dashed;border-color:#a9e6e935}
+.personal-project-orbit-a:after{content:'';position:absolute;top:-4px;left:50%;width:7px;height:7px;border-radius:50%;background:#d4ffff;box-shadow:0 0 14px 3px #92e0e4a0}
+.personal-project-visual{width:min(72%,360px);position:relative;padding:22px;border:1px solid #a8d9dc80;background:linear-gradient(135deg,#19394aee,#0a1b2aeF);box-shadow:0 26px 60px #0007;transform:rotate(-3deg)}
+.personal-project-visual-top,.personal-project-visual-bottom{font-size:8px;color:#b4d5d7}
+.personal-project-search{height:36px;display:flex;align-items:center;gap:12px;margin:24px 0 14px;padding:0 11px;border:1px solid #a5dce151;color:#c7f0ec;font-size:21px}
+.personal-project-search i{display:block;width:48%;height:2px;background:#a5dce14d}
+.personal-project-tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.personal-project-tiles i{height:58px;border:1px solid #a5dce13d;background:linear-gradient(145deg,#74c4ca32,#12324775);position:relative}
+.personal-project-tiles i:after{content:'';position:absolute;left:12px;right:30%;bottom:12px;height:2px;background:#c3e7e56b;box-shadow:0 -8px #c3e7e52d}
+.personal-project-tiles i:nth-child(2){background:linear-gradient(145deg,#b68a7440,#12324775)}
+.personal-project-tiles i:nth-child(3){background:linear-gradient(145deg,#627da14a,#12324775)}
+.personal-project-visual-bottom{padding-top:15px;margin-top:18px;border-top:1px solid #a5dce133}
+.personal-project-star{position:absolute;right:8%;top:12%;color:#bceae4;font-size:40px;text-shadow:0 0 18px #9ce2e495}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.personal-project-card:hover .personal-project-visual{transform:rotate(-1deg) translateY(-5px)}.personal-project-visual{transition:transform .4s ease}}
+@media(prefers-reduced-motion:no-preference){.personal-project-orbit-a{animation:personal-project-orbit 38s linear infinite}}
+@keyframes personal-project-orbit{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@media(min-width:801px) and (max-width:1100px){.nav nav{gap:clamp(12px,2vw,22px)}.nav-end{gap:12px}.nav-contact{padding:12px}}
+@media(max-width:800px){#projets-personnels{scroll-margin-top:76px}.personal-project-heading h2{font-size:clamp(40px,9.4vw,64px)}.personal-project-card{grid-template-columns:1fr;margin-top:40px}.personal-project-copy{padding:26px}.personal-project-copy h3{margin-top:30px}.personal-project-copy p{font-size:15px}.personal-project-art{min-height:330px;border-left:0;border-top:1px solid #a8d9dc30}.personal-project-visual{width:min(72%,290px);padding:18px}.personal-project-tiles i{height:42px}.personal-project-copy .personal-project-link{width:100%;max-width:340px}}
+@media(prefers-reduced-motion:reduce){.personal-project-orbit-a{animation:none}.personal-project-copy .personal-project-link{transition:none}.personal-project-copy .personal-project-link:hover,.personal-project-copy .personal-project-link:focus-visible{transform:none}}

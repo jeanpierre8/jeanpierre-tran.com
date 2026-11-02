@@ -13,5 +13,7 @@
  .hs-orbit i{position:absolute;top:46%;left:0;width:4px;height:4px;border-radius:50%;background:#e9ffff;box-shadow:0 0 9px 2px #9aeeee}.hs-orbit i:last-child{left:auto;right:18%;top:4%;width:3px;height:3px}
  .hs-line{position:absolute;left:10%;right:10%;bottom:9%;height:1px;background:linear-gradient(90deg,transparent,#a4e8e8,transparent);transform:scaleX(.45);transition:transform .5s ease;opacity:.65}.hs-active>.hs-layer .hs-line{transform:scaleX(1)}
  .hs-signal,.hs-project{z-index:3}.hs-signal .hs-orbit{width:82%;height:62%;top:50%;border-color:#a3e1e34d}.hs-project .hs-orbit{width:90%;height:70%;top:50%;border-color:#a3e1e332}.hs-signal .hs-light,.hs-project .hs-light{background:radial-gradient(circle 180px at var(--hs-x,50%) var(--hs-y,50%),#a3edf21c 0%,transparent 75%)}
+ .detail-page #experience .hs-signal{transition:opacity .18s ease-out}
+ body:not(.detail-page) .hs-hero,body:not(.detail-page) .hs-card{transition:opacity .18s ease-out}
 }
 @media(prefers-reduced-motion:reduce){.hs-layer{display:none!important}}
