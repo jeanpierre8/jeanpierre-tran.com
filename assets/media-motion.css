@@ -1,0 +1,186 @@
+/* A subtle spatial highlight on the informational cards, without implying a click action. */
+.media-feature{position:relative;isolation:isolate;overflow:hidden}
+.media-feature::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;background:radial-gradient(circle at 80% 0%,#8edee735,transparent 68%)}
+.media-feature::after{content:'';position:absolute;left:18%;right:18%;bottom:0;height:1px;pointer-events:none;opacity:0;background:linear-gradient(90deg,transparent,#aee9e4,transparent)}
+@media(hover:hover) and (pointer:fine){.media-feature:hover::before,.media-feature:hover::after{opacity:1}}
+@media(prefers-reduced-motion:no-preference){.media-feature::before,.media-feature::after{transition:opacity .28s ease}}
+
+/* The decorative orbits move only while their panel is visible. */
+@media(prefers-reduced-motion:no-preference){
+ .media-art-orbit{animation:media-orbit-spin 40s linear infinite paused}
+ .media-art-orbit.orbit-inner{animation-duration:28s;animation-direction:reverse}
+ .media-art.is-orbit-active .media-art-orbit{animation-play-state:running}
+ @keyframes media-orbit-spin{
+  from{transform:translate(-50%,-50%) rotate(0deg)}
+  to{transform:translate(-50%,-50%) rotate(360deg)}
+ }
+}
+
+/* Decorative reading flow: lines, connector, then suggestions. */
+@media(prefers-reduced-motion:no-preference){
+ .media-art-orbit i{animation-play-state:paused}
+ .media-art.is-orbit-active .media-art-orbit i{animation-play-state:running}
+ .media-ai-document i{transform-origin:left center;animation:media-ai-document-flow 8s ease-in-out infinite paused}
+ .media-ai-connector{animation:media-ai-connector-flow 8s ease-in-out infinite paused}
+ .media-ai-result i{transform-origin:left center;animation:media-ai-result-flow 8s ease-in-out infinite paused}
+ .media-ai-visual.is-diagram-active .media-ai-document i,
+ .media-ai-visual.is-diagram-active .media-ai-connector,
+ .media-ai-visual.is-diagram-active .media-ai-result i{animation-play-state:running}
+ @keyframes media-ai-document-flow{
+  0%,100%{opacity:.65;transform:scaleX(.76)}
+  14%,30%{opacity:1;transform:scaleX(1)}
+  43%{opacity:.65;transform:scaleX(.76)}
+ }
+ @keyframes media-ai-connector-flow{
+  0%,25%,100%{opacity:.55;transform:translateY(-4px)}
+  42%,54%{opacity:1;transform:translateY(4px)}
+  67%{opacity:.55;transform:translateY(-4px)}
+ }
+ @keyframes media-ai-result-flow{
+  0%,45%,100%{opacity:.65;transform:scaleX(.76)}
+  66%,82%{opacity:1;transform:scaleX(1)}
+ }
+}
+
+/* Gentle depth on the informational cards for hover-capable pointers. */
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .media-feature{transition:translate .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease,border-color .3s ease}
+ .media-feature:hover{z-index:1;translate:0 -5px;border-color:#b2e6e5a8;box-shadow:0 12px 30px #0008,0 0 22px #8ad4dd40}
+}
+/* Decorative illustration only. The explanatory text remains static and readable. */
+@media (prefers-reduced-motion: no-preference) {
+  .media-ai-orbit {
+    animation: media-ai-orbit-travel 22s linear infinite paused;
+  }
+  .media-ai-visual.is-diagram-active .media-ai-orbit {
+    animation-play-state: running;
+  }
+  @keyframes media-ai-orbit-travel {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .media-ai-document i {
+    transform-origin: left center;
+    animation: media-ai-reading 6.5s ease-in-out infinite paused;
+  }
+  .media-ai-document i:nth-of-type(2) { animation-delay: .18s; }
+  .media-ai-document i:nth-of-type(3) { animation-delay: .36s; }
+  .media-ai-connector {
+    animation: media-ai-transfer 6.5s ease-in-out infinite paused;
+  }
+  .media-ai-result i {
+    transform-origin: left center;
+    animation: media-ai-suggestions 6.5s ease-in-out infinite paused;
+  }
+  .media-ai-result i:nth-of-type(2) { animation-delay: .18s; }
+  .media-ai-result i:nth-of-type(3) { animation-delay: .36s; }
+  .media-ai-visual.is-diagram-active .media-ai-document i,
+  .media-ai-visual.is-diagram-active .media-ai-connector,
+  .media-ai-visual.is-diagram-active .media-ai-result i {
+    animation-play-state: running;
+  }
+  @keyframes media-ai-reading {
+    0%, 100% { opacity: .62; transform: scaleX(.5); }
+    16%, 30% { opacity: 1; transform: scaleX(1); }
+    46% { opacity: .62; transform: scaleX(.5); }
+  }
+  @keyframes media-ai-transfer {
+    0%, 25%, 100% { opacity: .55; transform: translateY(-7px); }
+    43%, 54% { opacity: 1; transform: translateY(7px); }
+    70% { opacity: .55; transform: translateY(-7px); }
+  }
+  @keyframes media-ai-suggestions {
+    0%, 46%, 100% { opacity: .62; transform: scaleX(.48); }
+    67%, 82% { opacity: 1; transform: scaleX(1); }
+  }
+
+  .media-ai-panel { overflow: hidden; }
+  .media-ai-panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent 48%, #c0b8ff40 49.5%, #c0b8ff66 50%, #c0b8ff40 50.5%, transparent 52%);
+    opacity: 0;
+    animation: media-ai-scan 6.5s ease-in-out infinite paused;
+  }
+  .media-ai-visual.is-diagram-active .media-ai-panel::after {
+    animation-play-state: running;
+  }
+  @keyframes media-ai-scan {
+    0%, 4% { opacity: 0; transform: translateY(-75%); }
+    9% { opacity: .55; }
+    42% { opacity: .55; transform: translateY(75%); }
+    48%, 100% { opacity: 0; transform: translateY(75%); }
+  }
+}
+/* Decorative responses on pointer hover; these illustrations are not controls. */
+@media (hover:hover) and (pointer:fine){
+  .media-art:hover{border-color:#a9f1efcc}
+  .media-art:hover .media-art-core{border-color:#c4ffff}
+  .media-art:hover .media-art-chip{border-color:#aee9e4c9;color:#efffff}
+  .media-ai-visual:hover{border-color:#c2b2f8d6}
+  .media-ai-visual:hover .media-ai-panel{border-color:#d0c4ff}
+  .media-ai-visual:hover .media-ai-result{border-color:#c8bafd}
+}
+
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .media-art,.media-ai-visual{transition:border-color .3s ease,box-shadow .3s ease}
+  .media-art-core,.media-art-chip,.media-ai-panel{transition:translate .35s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease}
+  .media-ai-result{transition:border-color .3s ease,box-shadow .3s ease}
+  .media-art:hover{box-shadow:0 0 34px #7dd7df36,inset 0 0 42px #9deff018}
+  .media-art:hover .media-art-core{translate:0 -5px;box-shadow:0 22px 58px #0008,0 0 52px #92eff15c}
+  .media-art:hover .media-chip-photo{translate:-5px -5px}
+  .media-art:hover .media-chip-video{translate:5px -3px}
+  .media-art:hover .media-chip-doc{translate:-3px 5px}
+  .media-art:hover .media-art-chip{box-shadow:0 12px 30px #0005,0 0 20px #91e5e135}
+  .media-ai-visual:hover{box-shadow:0 0 34px #ad9aff3b,inset 0 0 42px #b6a6fc1a}
+  .media-ai-visual:hover .media-ai-panel{translate:0 -6px;box-shadow:0 28px 60px #0009,0 0 38px #b09afb52}
+  .media-ai-visual:hover .media-ai-result{box-shadow:0 0 22px #a99afa36}
+}
+/* Touch feedback remains decorative: the cards are not controls. */
+.media-feature.is-touch-active{
+  z-index:1;
+  background-color:#17364aa8;
+  border-color:#b2e6e5a8;
+}
+.media-feature.is-touch-active::before,
+.media-feature.is-touch-active::after{opacity:1;transition:none}
+
+@media (any-pointer:coarse) and (prefers-reduced-motion:no-preference){
+  .media-feature{
+    transition:translate .22s cubic-bezier(.2,.7,.2,1),box-shadow .22s ease,background-color .22s ease,border-color .22s ease;
+  }
+}
+@media (prefers-reduced-motion:no-preference){
+  .media-feature.is-touch-active{
+    translate:0 -3px;
+    box-shadow:0 9px 24px #0007,0 0 20px #8ad4dd35;
+    transition:none;
+  }
+}
+/* A small travelling star highlights the contact section without covering its content. */
+@media (prefers-reduced-motion:no-preference) {
+  .media-contact::after {
+    content:'';
+    position:absolute;
+    top:-1px;
+    left:0;
+    width:40%;
+    height:2px;
+    pointer-events:none;
+    opacity:0;
+    background:linear-gradient(90deg,transparent 5%,#a8e8e455 64%,#d3fff5 88%,transparent 100%);
+    box-shadow:0 0 12px #8bdfe099;
+    animation:media-contact-starlight 8s ease-in-out infinite paused;
+  }
+  .media-contact.is-contact-active::after { animation-play-state:running; }
+  @keyframes media-contact-starlight {
+    0%,8% { opacity:0; transform:translateX(0); }
+    16% { opacity:.9; }
+    75% { opacity:.9; transform:translateX(150%); }
+    86%,100% { opacity:0; transform:translateX(150%); }
+  }
+}
