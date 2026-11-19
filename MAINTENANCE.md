@@ -5,7 +5,7 @@ Mis en place le 18/11/2026 (review + PR `review-impl-t_b7321755`).
 ## Structure
 
 - **Sources CSS/JS** : fichiers à la racine (`style.css`, `script.js`, etc.), éditables normalement.
-- **Bundles** : `assets/home.css|js`, `assets/detail.css|js`, `assets/media.css|js` — générés, référencés par les 4 pages HTML.
+- **Bundles** : `assets/home.css|js`, `assets/detail.css|js`, `assets/media.css|js` — générés et minifiés (csso/terser), référencés par les 4 pages HTML. Le build réécrit automatiquement les `url()` relatifs en `../` (les bundles vivent dans `assets/`).
 - **Polices** : `fonts/fonts.css` + woff2 auto-hébergés (subsets latin + latin-ext, `font-display: swap`). Plus aucun appel à Google Fonts.
 - **Images héros** : `station-480/800/960/1200.webp` + `station-optimized.webp` (1944w), servies via `srcset`/`sizes`.
 
