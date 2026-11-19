@@ -1,14 +1,14 @@
 (()=>{
  const button=document.getElementById('language');
  const query=new URLSearchParams(location.search).get('lang');
- let stored='fr';try{stored=sessionStorage.getItem('portfolio-language')||'fr'}catch(e){}
+ let stored='fr';try{stored=localStorage.getItem('portfolio-language')||'fr'}catch(e){}
  let language=query==='en'||query==='fr'?query:(stored==='en'?'en':'fr');
  function render(){
   document.documentElement.lang=language;
-  try{sessionStorage.setItem('portfolio-language',language)}catch(e){}
+  try{localStorage.setItem('portfolio-language',language)}catch(e){}
   document.querySelectorAll('[data-fr][data-en]').forEach(el=>{el.innerHTML=el.dataset[language]});
   button.innerHTML=language==='fr'?'FR <span>/ EN</span>':'EN <span>/ FR</span>';
-  button.setAttribute('aria-label',language==='fr'?'Switch to English':'Passer en français');
+  button.setAttribute('aria-label',language==='fr'?'FR / EN — Switch to English':'EN / FR — Passer en français');
   document.querySelector('nav').setAttribute('aria-label',language==='fr'?'Navigation des pages':'Page navigation');
   document.querySelectorAll('a[data-journey]').forEach(a=>a.href=language==='en'?'index.html?lang=en#parcours':'index.html#parcours');
   document.querySelectorAll('a[data-home]').forEach(a=>a.href=language==='en'?'index.html?lang=en#top':'index.html#top');
