@@ -13,8 +13,8 @@
  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!menu.hidden){event.preventDefault();setOpen(false,true)}});
  document.addEventListener('pointerdown',event=>{if(!menu.hidden&&!header.contains(event.target))setOpen(false)});
  narrow.addEventListener?.('change',()=>{if(!narrow.matches&&!menu.hidden)setOpen(false)});
- function syncLanguage(){const en=document.documentElement.lang==='en';try{sessionStorage.setItem('portfolio-language',en?'en':'fr')}catch(_){}document.querySelectorAll('.timeline-detail-link[data-page]').forEach(a=>{a.href=a.dataset.page+(en?'?lang=en':'')});labels()}
+ function syncLanguage(){const en=document.documentElement.lang==='en';try{localStorage.setItem('portfolio-language',en?'en':'fr')}catch(_){}document.querySelectorAll('.timeline-detail-link[data-page]').forEach(a=>{a.href=a.dataset.page+(en?'?lang=en':'')});labels()}
  lang?.addEventListener('click',()=>{syncLanguage();try{const url=new URL(location.href);url.searchParams.set('lang',document.documentElement.lang==='en'?'en':'fr');history.replaceState(history.state,'',url)}catch(_){}});
- let preferred='fr';try{preferred=new URLSearchParams(location.search).get('lang')||sessionStorage.getItem('portfolio-language')||'fr'}catch(_){};
+ let preferred='fr';try{preferred=new URLSearchParams(location.search).get('lang')||localStorage.getItem('portfolio-language')||'fr'}catch(_){};
  if(preferred==='en'&&document.documentElement.lang!=='en')lang?.click();else syncLanguage();
 })();
